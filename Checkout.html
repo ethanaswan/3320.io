@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+	background-color: powderblue;
+	font-family: verdana;
+	font-size: 32
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center;"><b>Checkout</b></h1><br><br>
+<p style="text-align:center;"><small>* required</small></p>
+<form style="text-align:center;">
+<br>Total Shopping Amount:
+<input type="text" name="total" maxlength="100"><br>
+<br>Total Tax:
+<input type="text" name="tax" maxlength="100"><br>
+<br>Total Shipping Charges:
+<input type="text" name="shipping_fees" maxlength="100"><br>
+<br>Total Amount Due:
+<input type="text" name="final_total" maxlength="100"><br>
+<br>Card Provider:*<select>
+<option value="visa">Visa</option>
+<option value="mastercard">Mastercard</option>
+<option value="amex">Amex</option>
+<option value="discover">Discover</option>
+</select><br>
+<br>Card Number:
+<input type="text" name="card_#" maxlength="100"><br>
+<br>Expiration:
+<input type="text" name="card_expiration" maxlength="100"><br><br>
+<input type="checkbox" name="submit" value="Yes" required>You agree to all terms?<br>
+<br><input type="submit" value="Submit" ><br>
+</form>
+</body>
+
+</html>
