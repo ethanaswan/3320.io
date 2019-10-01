@@ -1,18 +1,20 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-body {
-	background-color: powderblue;
-	font-family: verdana;
-	font-size: 32
-}
-</style>
-</head>
+<link rel="stylesheet" href="proj1styles.css"></head>
 <body>
-<h1 style="text-align:center;"><b>Shipping Information</b></h1><br><br>
-<p style="text-align:center;"><small>* required</small></p>
-<form style="text-align:center;">
+<nav>
+<ul>
+<li><a href="UserInformation.html">User Information</a></li>
+<li><a href="ShoppingCart.html">Shopping Cart</a></li>
+<li><a class="active" href="ShippingInfo.html">Shipping Information</a></li>
+<li><a href="Checkout.html">Checkout</a></li>
+</ul>
+</nav>
+<h1><b>Shipping Information</b></h1><br><br>
+<p><small>* required</small></p>
+<form>
 <input type="checkbox" name="autopopulate" value="Yes">Shipping information same as user information?<br>
 <br>Address 1:*<br>
 <input type="text" name="address1" maxlength="100" required><br>
