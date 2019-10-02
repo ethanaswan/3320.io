@@ -1,5 +1,5 @@
 body {
-	background-color: powderblue;
+	background-color: #41b3a3;
 	font-family: verdana;
 	font-size: 32;
 	text-align: center;
@@ -10,7 +10,7 @@ ul {
 	margin: 10px;
 	padding: 10px;
 	overflow: hidden;
-	background-color: aqua;
+	background-color: #e8a87c;
 }
 
 li {
@@ -26,11 +26,11 @@ li a {
 }
 
 li a:hover {
-	background-color: silver;
+	background-color: #e27d60;
 }
 
 li a.active {
-  background-color: darkblue;
+  background-color: #c38d9e;
   color: gold;
 }
 
@@ -48,4 +48,10 @@ form {
 
 select {
 	text-align: center;
+}
+footer {
+	background-color: #c38d9e;
+	padding: 5px;
+	text-align: left;
+	color: black;
 }
