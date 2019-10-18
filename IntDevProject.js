@@ -6,9 +6,18 @@ function calculate() {
 }
 
 function totalTax(double price) {
-	double tax = 0, totalPrice = 0;
-	tax = (price * .08);
-	totalPrice = price + tax;
-	return totalPrice;
+	double tax =  (price * .08);
+	return tax;
 
 }
+
+function shippingCost(double price) {
+	double shippingCost = 0.03 * price;
+	return shippingCost;
+}
+
+function totalDue(double price, double tax; double shippingCost) {
+	double total = price + tax + shippingCost;
+	return total;	
+}
+
