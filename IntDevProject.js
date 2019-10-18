@@ -1,23 +1,36 @@
 function calculate() {
-	double totalPrice = 0.0;
-	for (int i = 0; i < numChosen; i++) {
+	var totalPrice = 0.0;
+	for (var i = 0; i < numChosen; i++) {
 	totalPrice = 
  }
 }
 
-function totalTax(double price) {
-	double tax =  (price * .08);
+function totalTax(var price) {
+	var tax =  (price * .08);
 	return tax;
 
 }
 
-function shippingCost(double price) {
-	double shippingCost = 0.03 * price;
+function shippingCost(var price) {
+	var shippingCost = 0.03 * price;
 	return shippingCost;
 }
 
-function totalDue(double price, double tax; double shippingCost) {
-	double total = price + tax + shippingCost;
+function totalDue(var price, var tax; var shippingCost) {
+	var total = price + tax + shippingCost;
 	return total;	
 }
+
+function validateCardNum(var cardNum) {
+	for (var i = 0; i < 15; i++) {
+	if ()
+ }
+}
+
+function validateMmYyyy(var expDate) {
+	var today = new Date();
+	var month = (today.getMonth() + 1);
+	var year = today.getFullYear();
+	
+}	
 
