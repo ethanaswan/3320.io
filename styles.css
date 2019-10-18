@@ -50,8 +50,14 @@ select {
 	text-align: center;
 }
 footer {
+	padding-top: 3px;
+	position: absolute;
+	height: 30px;
+	margin-bottom: 0;
+	bottom: 0;
+  width: 100%;
 	background-color: #c38d9e;
-	padding: 5px;
+	padding: 8px;
 	text-align: left;
 	color: black;
 }

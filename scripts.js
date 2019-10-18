@@ -1,7 +1,7 @@
 function calculate() {
 	var totalPrice = 0.0;
 	for (var i = 0; i < numChosen; i++) {
-	totalPrice = 
+	totalPrice =
 	}
 }
 
@@ -19,13 +19,13 @@ function shippingCost(var price) {
 
 function totalDue(var price, var tax; var shippingCost) {
 	var total = price + tax + shippingCost;
-	return total;	
+	return total;
 
 }
 
 function validateCardNum(inputtext) {
 /*Visa cards – Begin with a 4 and have 13 or 16 digits.
- Mastercard cards – Begin with a 5 and has 16 digits. 
+ Mastercard cards – Begin with a 5 and has 16 digits.
 American Express cards – Begin with a 3, followed by a 4 or a 7 has 15 digits.
 */
 	if (cardType == VISA) {
@@ -52,9 +52,8 @@ function validateMmYyyy(var expDate) {
 	else
 		return true;
 
-}	
+}
 
 function submitOrder() {
 
 }
-
