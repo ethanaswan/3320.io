@@ -1,10 +1,33 @@
-function calculate() {
-	var totalPrice = 0.0;
-	for (var i = 0; i < numChosen; i++) {
-	totalPrice =
-	}
+function calculate_total() {
+	var quantity = document.getElementById('quantity').value;
+	var price = document.getElementById('unit_price').value;
+	document.getElementById("total_price").value = quantity * price;
 }
 
+function get_unit_price(){
+	var item = docuement.getElementById("item").value;
+	if (item == "xbox_1"){
+		document.getElementById("unit_price").value = 279;
+	}
+	else if (item == "xbox_2"){
+		document.getElementById("unit_price").value = 500;
+	}
+	else if (item == "playstation_1"){
+		document.getElementById("unit_price").value = 300;
+	}
+	else if (item == "playstation_2") {
+		document.getElementById("unit_price").value = 350;
+	}
+	else if (item == "pc_kit"){
+		document.getElementById("unit_price").value = 400;
+	}
+	else if (item == "switch"){
+		document.getElementById("unit_price").value = 300;
+	}
+	else if (item == "book"){
+		document.getElementById("unit_price").value = 19;
+	}
+}
 function totalTax(var price) {
 	var tax =  (price * .08);
 	return tax;
@@ -17,7 +40,7 @@ function shippingCost(var price) {
 
 }
 
-function totalDue(var price, var tax; var shippingCost) {
+function totalDue(var price, var tax, var shippingCost) {
 	var total = price + tax + shippingCost;
 	return total;
 
