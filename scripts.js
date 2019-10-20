@@ -1,25 +1,25 @@
 function get_unit_price(item){
 	switch (item) {
-		case xbox_1:
+		case 1:
 			document.getElementById("unit_price").value = 279;
 			break;
-		case xbox_2:
+		case 2:
 			document.getElementById("unit_price").value = 500;
 			break;
-		case playstation_1:
+		case 3:
 			document.getElementById("unit_price").value = 300;
 			break;
-		case playstation_2:
+		case 4:
 			document.getElementById("unit_price").value = 350;
 			break;
-	 	case pc_kit:
+	 	case 5:
 			document.getElementById("unit_price").value = 400;
 			break;
-		case switch:
+		case 6:
 			document.getElementById("unit_price").value = 300;
 			break;
-		case book:
-			document.getElementById("unit_price").value = 19;
+		case 7:
+			document.getElementById("unit_price").valuee = 19;
 			break;
 		}
 }

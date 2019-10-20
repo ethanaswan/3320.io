@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+	<script type='text/javascript' language='JavaScript' src="scripts.js"></script>
 <nav>
 <ul>
 	<li><a href="UserInformation.html">User Information</a></li>
@@ -15,22 +16,22 @@
 </nav>
 <form>
 <h5>Please choose the items you would like</h5>
-<br><p>Items:</p><br><select id="item" onChange='get_unit_price(this.value)' required>
-	<option value="xbox_1">Xbox 500GB ($279)</option>
-	<option value="xbox_2">Xbox 1TB ($500)</option>
-	<option value="playstation_1">Playstation 500GB ($300)</option>
-	<option value="playstation_2">Playstation 1TB ($350)</option>
-	<option value="pc_kit">Build a PC starter kit ($400)</option>
-	<option value="switch">Nintendo Switch ($300)</option>
-	<option value="book">Book: Game Addiction: The Experience and the Effects ($19)</option>
+<br><p>Items:</p><br><select id="item" onChange='get_unit_price(this.value);' required>
+	<option value="1">Xbox 500GB ($279)</option>
+	<option value="2">Xbox 1TB ($500)</option>
+	<option value="3">Playstation 500GB ($300)</option>
+	<option value="4">Playstation 1TB ($350)</option>
+	<option value="5">Build a PC starter kit ($400)</option>
+	<option value="6">Nintendo Switch ($300)</option>
+	<option value="7">Book: Game Addiction: The Experience and the Effects ($19)</option>
 </select><br>
 <br>Quantity? <input type="text" id="quantity" required><br><br>
 Unit Price:
 <input type="text" id="unit_price" ><br>
 <br>Total Price:
 <input type="text" id="total_price" ><br>
-<br><input type="submit" value="Submit">
-<script type='text/javascript' language='javascript' src="scripts.js"></script>
+<br><input type="submit" value="Submit" >
+<input type=button name=btn1 value="Click Me" onClick="get_unit_price(document.getElementById("item").value)" >
 </form>
 </body>
 <footer>
