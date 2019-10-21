@@ -1,27 +1,5 @@
 function get_unit_price(item){
-	switch (item) {
-		case 1:
-			document.getElementById("unit_price").value = 279;
-			break;
-		case 2:
-			document.getElementById("unit_price").value = 500;
-			break;
-		case 3:
-			document.getElementById("unit_price").value = 300;
-			break;
-		case 4:
-			document.getElementById("unit_price").value = 350;
-			break;
-	 	case 5:
-			document.getElementById("unit_price").value = 400;
-			break;
-		case 6:
-			document.getElementById("unit_price").value = 300;
-			break;
-		case 7:
-			document.getElementById("unit_price").valuee = 19;
-			break;
-		}
+	document.getElementById("unit_price").value = item;
 }
 
 function calculate_total() {
