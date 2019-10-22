@@ -1,3 +1,5 @@
+
+
 function get_unit_price(item){
 	document.getElementById("unit_price").value = item;
 }
@@ -8,13 +10,13 @@ function calculate_total() {
 	document.getElementById("total_price").value = quantity * price;
 }
 
-function totalTax(var price) {
+function totalTax(price) {
 	var tax =  (price * .08);
 	return tax;
 
 }
 
-function shippingCost(var price) {
+function shippingCost(price) {
 	var shippingCost = 0.03 * price;
 	return shippingCost;
 
