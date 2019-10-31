@@ -38,6 +38,13 @@
 <p><small>* required</small></p>
 <br><input type="submit" value="Submit" ><br>
 </form>
+<script>
+$(document).ready(function(){
+	$(".active").change(function(){
+    $("#total").val( $("#total_price").val());
+  });
+});
+</script>
 </body>
 <footer>
 	<p>Created by Jackson and Ethan

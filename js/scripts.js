@@ -1,67 +1,44 @@
-
-
-function get_unit_price(item){
-	document.getElementById("unit_price").value = item;
-}
-
-function calculate_total() {
-	var quantity = document.getElementById('quantity').value;
-	var price = document.getElementById('unit_price').value;
-	document.getElementById("total_price").value = quantity * price;
-}
-
-function totalTax(price) {
-	var tax =  (price * .08);
-	return tax;
-
-}
-
-function shippingCost(price) {
-	var shippingCost = 0.03 * price;
-	return shippingCost;
-
-}
-
-function totalDue(var price, var tax, var shippingCost) {
-	var total = price + tax + shippingCost;
-	return total;
-
-}
-
-function validateCardNum(inputtext) {
-/*Visa cards – Begin with a 4 and have 13 or 16 digits.
- Mastercard cards – Begin with a 5 and has 16 digits.
-American Express cards – Begin with a 3, followed by a 4 or a 7 has 15 digits.
-*/
-	if (cardType == VISA) {
+var shopping_cart = {
+	unit_price : 0,
+	quantity : 0,
+	current_price : 0,
+	total_shipping : 0,
+	final_price : 0,
+	
+	get unitPrice(){
+		return this.unit_price;
 	}
-	if (cardType = MasterCard) {
+	get quantity(){
+		return this.quantity;
 	}
-	if (cardType = AmericanExpress) {
+	get currentPrice(){
+		return this.current_price;
+	}
+	get totalShipping(){
+		return this.total_shipping;
+	}
+	get finalPrice(){
+		return this.final_price;
 	}
 
-}
 
-function validateMmYyyy(var expDate) {
-	var today = new Date();
-	var month = (today.getMonth() + 1);
-	var year = today.getFullYear();
-	if (expDate[2] != "/")
-		return false;
-	if (expDate[3]+expDate[4]+expDate[5]+expDate[6] < year)
-		return false;
-	else if(expDate[3]+expDate[4]+expDate[5]+expDate[6] == year) {
-		if (expDate[0] + expDate[1] < month)
-			return false;
+	set unitPrice(up){
+		this.unit_price = up;
 	}
-	else
-		return true;
-
+	set quantity(q){
+		this.quantity = q;
+	}
+	set currentPrice(cp){
+		this.current_price = cp;
+	}
+	set totalShipping(ts){
+		this.total_shipping = ts;
+	}
+	set finalPrice(fp){
+		this.final_price = fp;
+	}
 }
 
-function submitOrder() {
-
-}
 
 function validateForm() {
   var x = document.forms["myForm"]["fname"].value;
