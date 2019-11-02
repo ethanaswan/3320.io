@@ -13,7 +13,7 @@
 <li><a href="Checkout.html">Checkout</a></li>
 </ul>
 </nav>
-<form>
+<form action="insert_UI.php" method="POST">
 Full name:*
 <input type="text" id="fullname" maxlength="100" required><br>
 <br>Address 1:*
@@ -24,7 +24,7 @@ Full name:*
 <input type="text" id="city" maxlength="100" required><br>
 
 
-<br>State:*<select>
+<br>State:*<select id="state">
 <option value="Alabama">AL</option>
 <option value="Alaska">AK</option>
 <option value="Arizona">AZ</option>
