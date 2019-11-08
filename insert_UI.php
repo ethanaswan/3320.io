@@ -1,11 +1,15 @@
 <html>
-
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
 <body>
     
 <?php
     
-    // Success popup
-    // Send to Shopping Cart
 
     $servername = "localhost";
     $username = "tester";
@@ -114,10 +118,14 @@
     }
     else {
         echo "<br>1 record added";
+        
     }
 
 mysqli_close($conn);
-    
 ?>
+    <div class="alert alert-success">
+    <strong>Success!</strong> You should <a href="http://192.168.64.2/projects/3320/ShoppingCart.html" class="alert-link">click to redirect to Shopping Cart</a>.
+          </div>
+    
 </body>
 </html>
