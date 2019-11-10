@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav>
+<ul>
+	<li><a href="UserInformation.html">User Information</a></li>
+	<li><a class="active" href="ShoppingCart.html">Shopping Cart</a></li>
+	<li><a href="ShippingInfo.html">Shipping Information</a></li>
+	<li><a href="Checkout.html">Checkout</a></li>
+</ul>
+</nav>
+<form  method="post" action="insert_SC.php">
+<h5>Please choose the items you would like</h5>
+<br><p>Items:</p><br><select class="options" name="item" required>
+	<option value="279">Xbox 500GB ($279)</option>
+	<option value="500">Xbox 1TB ($500)</option>
+	<option value="300">Playstation 500GB ($300)</option>
+	<option value="350">Playstation 1TB ($350)</option>
+	<option value="400">Build a PC starter kit ($400)</option>
+	<option value="300">Nintendo Switch ($300)</option>
+	<option value="19">Book: Game Addiction: The Experience and the Effects ($19)</option>
+</select><br>
+<br>Quantity? <input type="text" id="quant" name"quantity" required><br><br>
+Unit Price:
+<input type="text" id="up" name="unit_price" value=""><br>
+<br>Total Price:
+<input type="text" id="tp" name="total_price" value=""><br>
+<br><input type="submit" value="Click here to submit" >
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/scripts.js"></script>
+<script>
+$(document).ready(function(){
+	$(".options").change(function(){
+    $("#up").val($(".options").val());
+		  $("#tp").val( $(".options").val() * $("#quant").val());
+  });
+});
+$(document).ready(function(){
+	$("#quant").change(function(){
+    $("#tp").val( $(".options").val() * $("#quant").val());
+  });
+});
+</script>
+</body>
+<footer>
+	<p>Created by Jackson and Ethan
+</footer>
+
+</html>
