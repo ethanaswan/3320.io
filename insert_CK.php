@@ -12,52 +12,28 @@
     $password = "testerpass";
     $dbname = "cs3320";
     $errors = [];
-    $total = $tax = $shipping_fees = $final_total = $card_type = $card_num = $card_exp = "";
+    $userId = $cardType = $cardNumber = $expDate "";
 
     // Validate input and arrange SQL INSERT
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        if (empty($_POST["total"])) {
-            $total = "missinginput";
-        } else {
-            $total = test_input($_POST["total"]);
-        }
-
-        if (empty($_POST["tax"])) {
-            $tax = "missinginput";
-        } else {
-            $tax = test_input($_POST["tax"]);
-        }
-
-        if (empty($_POST["shipping_fees"])) {
-            $shipping_fees = "missinginput";
-        } else {
-            $shipping_fees = test_input($_POST["shipping_fees"]);
-        }
-
-        if (empty($_POST["final_total"])) {
-            $final_total = "xx";
-        } else {
-            $final_total = test_input($_POST["fina_total"]);
-        }
-
         if (empty($_POST["card_type"])) {
-            $card_type = "xxxxxx";
+            $cardType = "xxxxxx";
         } else {
             $card_type = test_input($_POST["card_type"]);
         }
 
         if (empty($_POST["card_num"])) {
-            $card_num = "1111";
+            $cardNumber = "1111";
         } else {
-            $card_num = test_input($_POST["card_num"]);
+            $cardNumber = test_input($_POST["card_num"]);
         }
 
         if (empty($_POST["card_exp"])) {
-            $card_exp = "1111";
+            $cardExp= "1111";
         } else {
-            $card_exp = test_input($_POST["card_exp"]);
+            $cardExp = test_input($_POST["card_exp"]);
         }
 
     }
@@ -69,16 +45,8 @@
         return $data;
     }
 
-    $sql="INSERT INTO cs3320.UserInformation (userId, fullname, address1, address2, city, state, zip, phoneNumber, email)
-
-    VALUES
-    ('$userId', '$fullname', '$address1', '$address2', '$city', '$state', '$zip', '$phoneNumber', '$email')";
-
-    echo $sql;
-
-
     // Load database connection
-    $conn = mysqli_connect($servername, $username, $password);
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
 
     // Check connection
     if (!$conn) {
@@ -89,6 +57,16 @@
     foreach($errors as $msg) {
         echo "$msg <br>";
     }
+
+    // Retrieve userId
+    $userId = mysqli_insert_id($conn);
+
+    $sql="INSERT INTO PaymentInformation (userId, cardType, cardNumber, expDate)
+
+    VALUES
+    ('$userId', '$cardType', '$cardNumber', '$expDate')";
+
+    echo $sql;
 
     // execute insert
     if (!mysqli_query($conn,$sql))
