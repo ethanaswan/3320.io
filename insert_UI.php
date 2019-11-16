@@ -1,27 +1,24 @@
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
+
 <body>
 
 <?php
 
+    // Success popup
+    // Send to Shopping Cart
 
     $servername = "localhost";
     $username = "tester";
     $password = "testerpass";
     $dbname = "cs3320";
-    $userId = rand(2,100000000);
     $errors = [];
-    $fullname = $address1 = $address2 = $city = $state = $zip = $phoneNumber = $email = "";
+    $userId = $fullname = $address1 = $address2 = $city = $state = $zip = $phoneNumber = $email = "";
 
     // Validate input and arrange SQL INSERT
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        $userId = "124144";
 
         if (empty($_POST["fullname"])) {
             $fullname = "missinginput";
@@ -29,7 +26,7 @@
             $fullname = test_input($_POST["fullname"]);
             // check if name only contains letters and whitespace
             if (!preg_match("/^[a-zA-Z ]*$/",$fullname)) {
-                $nameErr = "Only letters and white space allowed";
+                $fullname = "Only letters and white space allowed";
             }
         }
 
@@ -75,7 +72,7 @@
             $email = test_input($_POST["email"]);
             // check if e-mail address is well-formed
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $emailErr = "Invalid email format";
+                $email = "Invalid email format";
             }
         }
 
@@ -94,6 +91,8 @@
     ('$userId', '$fullname', '$address1', '$address2', '$city', '$state', '$zip', '$phoneNumber', '$email')";
 
     echo $sql;
+
+
 
     // Load database connection
     $conn = mysqli_connect($servername, $username, $password);
@@ -115,14 +114,10 @@
     }
     else {
         echo "<br>1 record added";
-
     }
 
 mysqli_close($conn);
-?>
-    <div class="alert alert-success">
-    <strong>Success!</strong> You should <a href="http://192.168.64.2/projects/3320/ShoppingCart.html" class="alert-link">click to redirect to Shopping Cart</a>.
-          </div>
 
+?>
 </body>
 </html>
